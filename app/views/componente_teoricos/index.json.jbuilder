@@ -1,0 +1,1 @@
+json.array! @componente_teoricos, partial: 'componente_teoricos/componente_teorico', as: :componente_teorico

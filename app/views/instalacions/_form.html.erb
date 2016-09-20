@@ -1,0 +1,37 @@
+<%= form_for(instalacion) do |f| %>
+  <% if instalacion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(instalacion.errors.count, "error") %> prohibited this instalacion from being saved:</h2>
+
+      <ul>
+      <% instalacion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :aulas_fisico_espacial %>
+    <%= f.text_field :aulas_fisico_espacial %>
+  </div>
+
+  <div class="field">
+    <%= f.label :talleres_fisico_espacial %>
+    <%= f.text_field :talleres_fisico_espacial %>
+  </div>
+
+  <div class="field">
+    <%= f.label :aulas_mobiliario %>
+    <%= f.text_field :aulas_mobiliario %>
+  </div>
+
+  <div class="field">
+    <%= f.label :talleres_mobiliario %>
+    <%= f.text_field :talleres_mobiliario %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

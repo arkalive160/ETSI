@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  aulas_fisico_espacial: MyString
+  talleres_fisico_espacial: MyString
+  aulas_mobiliario: MyString
+  talleres_mobiliario: MyString
+
+two:
+  aulas_fisico_espacial: MyString
+  talleres_fisico_espacial: MyString
+  aulas_mobiliario: MyString
+  talleres_mobiliario: MyString

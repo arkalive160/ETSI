@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre practico:</strong>
+  <%= @componente_practico.nombre_practico %>
+</p>
+
+<p>
+  <strong>Total horas:</strong>
+  <%= @componente_practico.total_horas %>
+</p>
+
+<%= link_to 'Edit', edit_componente_practico_path(@componente_practico) %> |
+<%= link_to 'Back', componente_practicos_path %>

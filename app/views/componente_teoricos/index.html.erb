@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Componente Teoricos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre teorico</th>
+      <th>Total horas</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @componente_teoricos.each do |componente_teorico| %>
+      <tr>
+        <td><%= componente_teorico.nombre_teorico %></td>
+        <td><%= componente_teorico.total_horas %></td>
+        <td><%= link_to 'Show', componente_teorico %></td>
+        <td><%= link_to 'Edit', edit_componente_teorico_path(componente_teorico) %></td>
+        <td><%= link_to 'Destroy', componente_teorico, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Componente Teorico', new_componente_teorico_path %>

@@ -1,0 +1,2 @@
+module ComponentePracticosHelper
+end

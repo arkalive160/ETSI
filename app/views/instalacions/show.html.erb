@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Aulas fisico espacial:</strong>
+  <%= @instalacion.aulas_fisico_espacial %>
+</p>
+
+<p>
+  <strong>Talleres fisico espacial:</strong>
+  <%= @instalacion.talleres_fisico_espacial %>
+</p>
+
+<p>
+  <strong>Aulas mobiliario:</strong>
+  <%= @instalacion.aulas_mobiliario %>
+</p>
+
+<p>
+  <strong>Talleres mobiliario:</strong>
+  <%= @instalacion.talleres_mobiliario %>
+</p>
+
+<%= link_to 'Edit', edit_instalacion_path(@instalacion) %> |
+<%= link_to 'Back', instalacions_path %>

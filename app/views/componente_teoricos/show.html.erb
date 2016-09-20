@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre teorico:</strong>
+  <%= @componente_teorico.nombre_teorico %>
+</p>
+
+<p>
+  <strong>Total horas:</strong>
+  <%= @componente_teorico.total_horas %>
+</p>
+
+<%= link_to 'Edit', edit_componente_teorico_path(@componente_teorico) %> |
+<%= link_to 'Back', componente_teoricos_path %>

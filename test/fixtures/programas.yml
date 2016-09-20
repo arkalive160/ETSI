@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre_programa: MyString
+  tipo_educacion: false
+  titulo_ortorga: MyString
+  tiempo_formacion: 1
+  familia_profesional: MyString
+
+two:
+  nombre_programa: MyString
+  tipo_educacion: false
+  titulo_ortorga: MyString
+  tiempo_formacion: 1
+  familia_profesional: MyString

@@ -1,0 +1,27 @@
+<%= form_for(componente_practico) do |f| %>
+  <% if componente_practico.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(componente_practico.errors.count, "error") %> prohibited this componente_practico from being saved:</h2>
+
+      <ul>
+      <% componente_practico.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre_practico %>
+    <%= f.text_field :nombre_practico %>
+  </div>
+
+  <div class="field">
+    <%= f.label :total_horas %>
+    <%= f.number_field :total_horas %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

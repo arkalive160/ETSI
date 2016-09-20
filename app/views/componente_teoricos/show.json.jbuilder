@@ -1,0 +1,1 @@
+json.partial! "componente_teoricos/componente_teorico", componente_teorico: @componente_teorico

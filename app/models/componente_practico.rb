@@ -1,0 +1,2 @@
+class ComponentePractico < ApplicationRecord
+end

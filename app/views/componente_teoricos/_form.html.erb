@@ -1,0 +1,27 @@
+<%= form_for(componente_teorico) do |f| %>
+  <% if componente_teorico.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(componente_teorico.errors.count, "error") %> prohibited this componente_teorico from being saved:</h2>
+
+      <ul>
+      <% componente_teorico.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre_teorico %>
+    <%= f.text_field :nombre_teorico %>
+  </div>
+
+  <div class="field">
+    <%= f.label :total_horas %>
+    <%= f.number_field :total_horas %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

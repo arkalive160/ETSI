@@ -1,0 +1,1 @@
+json.array! @instalacions, partial: 'instalacions/instalacion', as: :instalacion

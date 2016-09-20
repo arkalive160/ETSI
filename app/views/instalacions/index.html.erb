@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Instalacions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Aulas fisico espacial</th>
+      <th>Talleres fisico espacial</th>
+      <th>Aulas mobiliario</th>
+      <th>Talleres mobiliario</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @instalacions.each do |instalacion| %>
+      <tr>
+        <td><%= instalacion.aulas_fisico_espacial %></td>
+        <td><%= instalacion.talleres_fisico_espacial %></td>
+        <td><%= instalacion.aulas_mobiliario %></td>
+        <td><%= instalacion.talleres_mobiliario %></td>
+        <td><%= link_to 'Show', instalacion %></td>
+        <td><%= link_to 'Edit', edit_instalacion_path(instalacion) %></td>
+        <td><%= link_to 'Destroy', instalacion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Instalacion', new_instalacion_path %>

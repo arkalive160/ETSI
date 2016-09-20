@@ -1,0 +1,1 @@
+json.array! @componente_practicos, partial: 'componente_practicos/componente_practico', as: :componente_practico
