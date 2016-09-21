@@ -7,7 +7,7 @@ class CreateTallers < ActiveRecord::Migration[5.0]
       t.integer :telefono
       t.integer :fax
       t.string :email
-       t.belongs_to :locacion, index: true
+      t.belongs_to :locacion, index: true
 
       t.timestamps
     end

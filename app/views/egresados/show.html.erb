@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Es empleado:</strong>
+  <%= @egresado.es_empleado %>
+</p>
+
+<p>
+  <strong>Caracter empleo:</strong>
+  <%= @egresado.caracter_empleo %>
+</p>
+
+<p>
+  <strong>Fecha egreso:</strong>
+  <%= @egresado.fecha_egreso %>
+</p>
+
+<%= link_to 'Edit', edit_egresado_path(@egresado) %> |
+<%= link_to 'Back', egresados_path %>

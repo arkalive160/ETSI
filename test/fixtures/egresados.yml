@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  es_empleado: false
+  caracter_empleo: MyString
+  fecha_egreso: 2016-09-21
+
+two:
+  es_empleado: false
+  caracter_empleo: MyString
+  fecha_egreso: 2016-09-21

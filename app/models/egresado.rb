@@ -1,0 +1,2 @@
+class Egresado < Estudiante
+end

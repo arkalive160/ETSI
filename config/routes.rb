@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :activos
+  resources :egresados
+  resources :estudiantes
   resources :locacions
   resources :tallers
   resources :procedimientos

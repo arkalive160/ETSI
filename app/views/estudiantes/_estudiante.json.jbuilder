@@ -1,0 +1,2 @@
+json.extract! estudiante, :id, :numero_identificacion, :nombre, :apellido, :genero, :edad, :fecha_nacimiento, :grupo_etnico, :nivel_escolaridad, :created_at, :updated_at
+json.url estudiante_url(estudiante, format: :json)

@@ -1,0 +1,32 @@
+<%= form_for(egresado) do |f| %>
+  <% if egresado.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(egresado.errors.count, "error") %> prohibited this egresado from being saved:</h2>
+
+      <ul>
+      <% egresado.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :es_empleado %>
+    <%= f.check_box :es_empleado %>
+  </div>
+
+  <div class="field">
+    <%= f.label :caracter_empleo %>
+    <%= f.text_field :caracter_empleo %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fecha_egreso %>
+    <%= f.date_select :fecha_egreso %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

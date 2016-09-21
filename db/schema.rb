@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160921071600) do
+ActiveRecord::Schema.define(version: 20160921171019) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activos", force: :cascade do |t|
+    t.date     "fecha_ingreso"
+    t.integer  "codigo"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "asignaturas", force: :cascade do |t|
     t.string   "nombre_asignatura"
@@ -37,6 +44,27 @@ ActiveRecord::Schema.define(version: 20160921071600) do
     t.integer  "total_horas"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+  end
+
+  create_table "egresados", force: :cascade do |t|
+    t.boolean  "es_empleado"
+    t.string   "caracter_empleo"
+    t.date     "fecha_egreso"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "estudiantes", force: :cascade do |t|
+    t.string   "numero_identificacion"
+    t.string   "nombre"
+    t.string   "apellido"
+    t.boolean  "genero"
+    t.integer  "edad"
+    t.date     "fecha_nacimiento"
+    t.string   "grupo_etnico"
+    t.string   "nivel_escolaridad"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   create_table "instalacions", force: :cascade do |t|

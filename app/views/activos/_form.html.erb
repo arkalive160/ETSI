@@ -1,0 +1,27 @@
+<%= form_for(activo) do |f| %>
+  <% if activo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(activo.errors.count, "error") %> prohibited this activo from being saved:</h2>
+
+      <ul>
+      <% activo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :fecha_ingreso %>
+    <%= f.date_select :fecha_ingreso %>
+  </div>
+
+  <div class="field">
+    <%= f.label :codigo %>
+    <%= f.number_field :codigo %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

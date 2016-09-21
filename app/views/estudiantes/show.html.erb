@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Numero identificacion:</strong>
+  <%= @estudiante.numero_identificacion %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @estudiante.nombre %>
+</p>
+
+<p>
+  <strong>Apellido:</strong>
+  <%= @estudiante.apellido %>
+</p>
+
+<p>
+  <strong>Genero:</strong>
+  <%= @estudiante.genero %>
+</p>
+
+<p>
+  <strong>Edad:</strong>
+  <%= @estudiante.edad %>
+</p>
+
+<p>
+  <strong>Fecha nacimiento:</strong>
+  <%= @estudiante.fecha_nacimiento %>
+</p>
+
+<p>
+  <strong>Grupo etnico:</strong>
+  <%= @estudiante.grupo_etnico %>
+</p>
+
+<p>
+  <strong>Nivel escolaridad:</strong>
+  <%= @estudiante.nivel_escolaridad %>
+</p>
+
+<%= link_to 'Edit', edit_estudiante_path(@estudiante) %> |
+<%= link_to 'Back', estudiantes_path %>

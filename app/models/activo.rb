@@ -1,0 +1,2 @@
+class Activo < Estudiante
+end

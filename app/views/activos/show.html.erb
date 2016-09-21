@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fecha ingreso:</strong>
+  <%= @activo.fecha_ingreso %>
+</p>
+
+<p>
+  <strong>Codigo:</strong>
+  <%= @activo.codigo %>
+</p>
+
+<%= link_to 'Edit', edit_activo_path(@activo) %> |
+<%= link_to 'Back', activos_path %>
