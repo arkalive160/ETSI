@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160921002031) do
+ActiveRecord::Schema.define(version: 20160921060106) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,12 +50,34 @@ ActiveRecord::Schema.define(version: 20160921002031) do
     t.index ["instalacion_id"], name: "index_instalacions_on_instalacion_id", using: :btree
   end
 
+  create_table "materials", force: :cascade do |t|
+    t.string   "nombre"
+    t.text     "descripcion"
+    t.integer  "cantidad"
+    t.integer  "precio_unitario"
+    t.integer  "precio_total"
+    t.string   "tipo_material"
+    t.string   "imagen"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
   create_table "modulos", force: :cascade do |t|
     t.string   "nombre"
     t.integer  "horas_modulo"
     t.text     "descripcion"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "procedimientos", force: :cascade do |t|
+    t.string   "titulo"
+    t.text     "descripcion"
+    t.binary   "imagen"
+    t.integer  "componente_practico_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.index ["componente_practico_id"], name: "index_procedimientos_on_componente_practico_id", using: :btree
   end
 
   create_table "programas", force: :cascade do |t|
