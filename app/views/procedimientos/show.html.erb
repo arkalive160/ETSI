@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titulo:</strong>
+  <%= @procedimiento.titulo %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @procedimiento.descripcion %>
+</p>
+
+<p>
+  <strong>Imagen:</strong>
+  <%= @procedimiento.imagen %>
+</p>
+
+<%= link_to 'Edit', edit_procedimiento_path(@procedimiento) %> |
+<%= link_to 'Back', procedimientos_path %>

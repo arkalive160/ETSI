@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre proyecto:</strong>
+  <%= @taller.nombre_proyecto %>
+</p>
+
+<p>
+  <strong>Inst contraparte:</strong>
+  <%= @taller.inst_contraparte %>
+</p>
+
+<p>
+  <strong>Responsable:</strong>
+  <%= @taller.responsable %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @taller.telefono %>
+</p>
+
+<p>
+  <strong>Fax:</strong>
+  <%= @taller.fax %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @taller.email %>
+</p>
+
+<%= link_to 'Edit', edit_taller_path(@taller) %> |
+<%= link_to 'Back', tallers_path %>

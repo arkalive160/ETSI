@@ -1,0 +1,1 @@
+json.array! @locacions, partial: 'locacions/locacion', as: :locacion

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :locacions
+  resources :tallers
+  resources :procedimientos
   resources :materials
   resources :unidads
   resources :asignaturas

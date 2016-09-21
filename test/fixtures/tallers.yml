@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre_proyecto: MyString
+  inst_contraparte: MyString
+  responsable: MyString
+  telefono: 1
+  fax: 1
+  email: MyString
+
+two:
+  nombre_proyecto: MyString
+  inst_contraparte: MyString
+  responsable: MyString
+  telefono: 1
+  fax: 1
+  email: MyString

@@ -1,0 +1,47 @@
+<%= form_for(taller) do |f| %>
+  <% if taller.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(taller.errors.count, "error") %> prohibited this taller from being saved:</h2>
+
+      <ul>
+      <% taller.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre_proyecto %>
+    <%= f.text_field :nombre_proyecto %>
+  </div>
+
+  <div class="field">
+    <%= f.label :inst_contraparte %>
+    <%= f.text_field :inst_contraparte %>
+  </div>
+
+  <div class="field">
+    <%= f.label :responsable %>
+    <%= f.text_field :responsable %>
+  </div>
+
+  <div class="field">
+    <%= f.label :telefono %>
+    <%= f.number_field :telefono %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fax %>
+    <%= f.number_field :fax %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

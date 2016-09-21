@@ -6,6 +6,7 @@ class CreateProgramas < ActiveRecord::Migration[5.0]
       t.string :titulo_ortorga
       t.integer :tiempo_formacion
       t.string :familia_profesional
+      t.belongs_to :taller, index: true
 
       t.timestamps
     end

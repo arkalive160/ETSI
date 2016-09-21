@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160921060106) do
+ActiveRecord::Schema.define(version: 20160921071600) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,14 @@ ActiveRecord::Schema.define(version: 20160921060106) do
     t.index ["instalacion_id"], name: "index_instalacions_on_instalacion_id", using: :btree
   end
 
+  create_table "locacions", force: :cascade do |t|
+    t.string   "pais"
+    t.string   "ciudad"
+    t.string   "direccion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "materials", force: :cascade do |t|
     t.string   "nombre"
     t.text     "descripcion"
@@ -72,8 +80,8 @@ ActiveRecord::Schema.define(version: 20160921060106) do
 
   create_table "procedimientos", force: :cascade do |t|
     t.string   "titulo"
-    t.text     "descripcion"
-    t.binary   "imagen"
+    t.string   "descripcion"
+    t.string   "imagen"
     t.integer  "componente_practico_id"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
@@ -88,6 +96,17 @@ ActiveRecord::Schema.define(version: 20160921060106) do
     t.string   "familia_profesional"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+  end
+
+  create_table "tallers", force: :cascade do |t|
+    t.string   "nombre_proyecto"
+    t.string   "inst_contraparte"
+    t.string   "responsable"
+    t.integer  "telefono"
+    t.integer  "fax"
+    t.string   "email"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "unidads", force: :cascade do |t|

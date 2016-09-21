@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tallers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre proyecto</th>
+      <th>Inst contraparte</th>
+      <th>Responsable</th>
+      <th>Telefono</th>
+      <th>Fax</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tallers.each do |taller| %>
+      <tr>
+        <td><%= taller.nombre_proyecto %></td>
+        <td><%= taller.inst_contraparte %></td>
+        <td><%= taller.responsable %></td>
+        <td><%= taller.telefono %></td>
+        <td><%= taller.fax %></td>
+        <td><%= taller.email %></td>
+        <td><%= link_to 'Show', taller %></td>
+        <td><%= link_to 'Edit', edit_taller_path(taller) %></td>
+        <td><%= link_to 'Destroy', taller, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Taller', new_taller_path %>
