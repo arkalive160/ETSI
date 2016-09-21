@@ -5,7 +5,6 @@ class CreateUnidads < ActiveRecord::Migration[5.0]
       t.text :competencias
       t.integer :horas_unidad
       t.belongs_to :modulo, index: true
-
       t.timestamps
     end
   end

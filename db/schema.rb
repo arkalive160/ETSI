@@ -35,15 +35,19 @@ ActiveRecord::Schema.define(version: 20160921171019) do
   create_table "componente_practicos", force: :cascade do |t|
     t.string   "nombre_practico"
     t.integer  "total_horas"
+    t.integer  "programa_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.index ["programa_id"], name: "index_componente_practicos_on_programa_id", using: :btree
   end
 
   create_table "componente_teoricos", force: :cascade do |t|
     t.string   "nombre_teorico"
     t.integer  "total_horas"
+    t.integer  "programa_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.index ["programa_id"], name: "index_componente_teoricos_on_programa_id", using: :btree
   end
 
   create_table "egresados", force: :cascade do |t|
@@ -68,14 +72,14 @@ ActiveRecord::Schema.define(version: 20160921171019) do
   end
 
   create_table "instalacions", force: :cascade do |t|
-    t.integer  "instalacion_id"
+    t.integer  "programa_id"
     t.string   "aulas_fisico_espacial"
     t.string   "talleres_fisico_espacial"
     t.string   "aulas_mobiliario"
     t.string   "talleres_mobiliario"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
-    t.index ["instalacion_id"], name: "index_instalacions_on_instalacion_id", using: :btree
+    t.index ["programa_id"], name: "index_instalacions_on_programa_id", using: :btree
   end
 
   create_table "locacions", force: :cascade do |t|
@@ -122,8 +126,10 @@ ActiveRecord::Schema.define(version: 20160921171019) do
     t.string   "titulo_ortorga"
     t.integer  "tiempo_formacion"
     t.string   "familia_profesional"
+    t.integer  "taller_id"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+    t.index ["taller_id"], name: "index_programas_on_taller_id", using: :btree
   end
 
   create_table "tallers", force: :cascade do |t|
@@ -133,8 +139,10 @@ ActiveRecord::Schema.define(version: 20160921171019) do
     t.integer  "telefono"
     t.integer  "fax"
     t.string   "email"
+    t.integer  "locacion_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.index ["locacion_id"], name: "index_tallers_on_locacion_id", using: :btree
   end
 
   create_table "unidads", force: :cascade do |t|
