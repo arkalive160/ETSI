@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :unidads
   resources :asignaturas
   resources :componente_teoricos
   resources :modulos

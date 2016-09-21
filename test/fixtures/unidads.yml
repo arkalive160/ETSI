@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre_unidad: MyString
+  competencias: MyText
+  horas_unidad: 1
+
+two:
+  nombre_unidad: MyString
+  competencias: MyText
+  horas_unidad: 1

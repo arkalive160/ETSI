@@ -1,4 +1,4 @@
 class ComponenteTeorico < ApplicationRecord
-    has_many :asignatura 
+    has_many :asignaturas 
     
 end

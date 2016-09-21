@@ -10,10 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160920210404) do
+ActiveRecord::Schema.define(version: 20160921002031) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "asignaturas", force: :cascade do |t|
+    t.string   "nombre_asignatura"
+    t.text     "contenido"
+    t.integer  "horas_asignatura"
+    t.integer  "componente_teorico_id"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.index ["componente_teorico_id"], name: "index_asignaturas_on_componente_teorico_id", using: :btree
+  end
+
+  create_table "componente_practicos", force: :cascade do |t|
+    t.string   "nombre_practico"
+    t.integer  "total_horas"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "componente_teoricos", force: :cascade do |t|
+    t.string   "nombre_teorico"
+    t.integer  "total_horas"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "instalacions", force: :cascade do |t|
     t.integer  "instalacion_id"
@@ -26,6 +50,14 @@ ActiveRecord::Schema.define(version: 20160920210404) do
     t.index ["instalacion_id"], name: "index_instalacions_on_instalacion_id", using: :btree
   end
 
+  create_table "modulos", force: :cascade do |t|
+    t.string   "nombre"
+    t.integer  "horas_modulo"
+    t.text     "descripcion"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
   create_table "programas", force: :cascade do |t|
     t.string   "nombre_programa"
     t.boolean  "tipo_educacion"
@@ -34,6 +66,16 @@ ActiveRecord::Schema.define(version: 20160920210404) do
     t.string   "familia_profesional"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+  end
+
+  create_table "unidads", force: :cascade do |t|
+    t.string   "nombre_unidad"
+    t.text     "competencias"
+    t.integer  "horas_unidad"
+    t.integer  "modulo_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["modulo_id"], name: "index_unidads_on_modulo_id", using: :btree
   end
 
 end

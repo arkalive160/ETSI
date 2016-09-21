@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre unidad:</strong>
+  <%= @unidad.nombre_unidad %>
+</p>
+
+<p>
+  <strong>Competencias:</strong>
+  <%= @unidad.competencias %>
+</p>
+
+<p>
+  <strong>Horas unidad:</strong>
+  <%= @unidad.horas_unidad %>
+</p>
+
+<%= link_to 'Edit', edit_unidad_path(@unidad) %> |
+<%= link_to 'Back', unidads_path %>
