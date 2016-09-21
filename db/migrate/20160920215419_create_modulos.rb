@@ -4,6 +4,7 @@ class CreateModulos < ActiveRecord::Migration[5.0]
       t.string :nombre
       t.integer :horas_modulo
       t.text :descripcion
+      t.belongs_to :componente_practico, index: true
 
       t.timestamps
     end

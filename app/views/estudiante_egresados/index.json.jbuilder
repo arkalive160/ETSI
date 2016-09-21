@@ -1,0 +1,1 @@
+json.array! @estudiante_egresados, partial: 'estudiante_egresados/estudiante_egresado', as: :estudiante_egresado

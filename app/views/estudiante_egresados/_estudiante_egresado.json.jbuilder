@@ -1,0 +1,2 @@
+json.extract! estudiante_egresado, :id, :nombre, :apellido, :genero, :edad, :fecha_nacimiento, :numero_identificacion, :grupo_etnico, :nivel_escolaridad, :es_empleado, :caracter_empleo, :fecha_egreso, :created_at, :updated_at
+json.url estudiante_egresado_url(estudiante_egresado, format: :json)

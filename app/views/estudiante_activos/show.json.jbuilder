@@ -1,0 +1,1 @@
+json.partial! "estudiante_activos/estudiante_activo", estudiante_activo: @estudiante_activo

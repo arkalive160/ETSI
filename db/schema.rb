@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160921171019) do
+ActiveRecord::Schema.define(version: 20160921223445) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,41 @@ ActiveRecord::Schema.define(version: 20160921171019) do
     t.date     "fecha_egreso"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+  end
+
+  create_table "estudiante_activos", force: :cascade do |t|
+    t.string   "nombre"
+    t.string   "apellido"
+    t.string   "genero"
+    t.integer  "edad"
+    t.date     "fecha_nacimiento"
+    t.integer  "numero_identificacion"
+    t.string   "grupo_etnico"
+    t.string   "nivel_escolaridad"
+    t.bigint   "codigo_estudiante"
+    t.date     "fecha_ingreso"
+    t.integer  "programa_id"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.index ["programa_id"], name: "index_estudiante_activos_on_programa_id", using: :btree
+  end
+
+  create_table "estudiante_egresados", force: :cascade do |t|
+    t.string   "nombre"
+    t.string   "apellido"
+    t.string   "genero"
+    t.integer  "edad"
+    t.date     "fecha_nacimiento"
+    t.integer  "numero_identificacion"
+    t.string   "grupo_etnico"
+    t.string   "nivel_escolaridad"
+    t.boolean  "es_empleado"
+    t.string   "caracter_empleo"
+    t.date     "fecha_egreso"
+    t.integer  "programa_id"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.index ["programa_id"], name: "index_estudiante_egresados_on_programa_id", using: :btree
   end
 
   create_table "estudiantes", force: :cascade do |t|
@@ -106,8 +141,10 @@ ActiveRecord::Schema.define(version: 20160921171019) do
     t.string   "nombre"
     t.integer  "horas_modulo"
     t.text     "descripcion"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "componente_practico_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.index ["componente_practico_id"], name: "index_modulos_on_componente_practico_id", using: :btree
   end
 
   create_table "procedimientos", force: :cascade do |t|
@@ -123,7 +160,7 @@ ActiveRecord::Schema.define(version: 20160921171019) do
   create_table "programas", force: :cascade do |t|
     t.string   "nombre_programa"
     t.boolean  "tipo_educacion"
-    t.string   "titulo_ortorga"
+    t.string   "titulo_otorga"
     t.integer  "tiempo_formacion"
     t.string   "familia_profesional"
     t.integer  "taller_id"

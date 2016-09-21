@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Estudiante Egresados</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Genero</th>
+      <th>Edad</th>
+      <th>Fecha nacimiento</th>
+      <th>Numero identificacion</th>
+      <th>Grupo etnico</th>
+      <th>Nivel escolaridad</th>
+      <th>Es empleado</th>
+      <th>Caracter empleo</th>
+      <th>Fecha egreso</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @estudiante_egresados.each do |estudiante_egresado| %>
+      <tr>
+        <td><%= estudiante_egresado.nombre %></td>
+        <td><%= estudiante_egresado.apellido %></td>
+        <td><%= estudiante_egresado.genero %></td>
+        <td><%= estudiante_egresado.edad %></td>
+        <td><%= estudiante_egresado.fecha_nacimiento %></td>
+        <td><%= estudiante_egresado.numero_identificacion %></td>
+        <td><%= estudiante_egresado.grupo_etnico %></td>
+        <td><%= estudiante_egresado.nivel_escolaridad %></td>
+        <td><%= estudiante_egresado.es_empleado %></td>
+        <td><%= estudiante_egresado.caracter_empleo %></td>
+        <td><%= estudiante_egresado.fecha_egreso %></td>
+        <td><%= link_to 'Show', estudiante_egresado %></td>
+        <td><%= link_to 'Edit', edit_estudiante_egresado_path(estudiante_egresado) %></td>
+        <td><%= link_to 'Destroy', estudiante_egresado, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Estudiante Egresado', new_estudiante_egresado_path %>

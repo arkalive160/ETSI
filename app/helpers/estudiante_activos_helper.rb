@@ -1,0 +1,2 @@
+module EstudianteActivosHelper
+end

@@ -1,0 +1,1 @@
+json.array! @estudiante_activos, partial: 'estudiante_activos/estudiante_activo', as: :estudiante_activo

@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Estudiante Activos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Genero</th>
+      <th>Edad</th>
+      <th>Fecha nacimiento</th>
+      <th>Numero identificacion</th>
+      <th>Grupo etnico</th>
+      <th>Nivel escolaridad</th>
+      <th>Codigo estudiante</th>
+      <th>Fecha ingreso</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @estudiante_activos.each do |estudiante_activo| %>
+      <tr>
+        <td><%= estudiante_activo.nombre %></td>
+        <td><%= estudiante_activo.apellido %></td>
+        <td><%= estudiante_activo.genero %></td>
+        <td><%= estudiante_activo.edad %></td>
+        <td><%= estudiante_activo.fecha_nacimiento %></td>
+        <td><%= estudiante_activo.numero_identificacion %></td>
+        <td><%= estudiante_activo.grupo_etnico %></td>
+        <td><%= estudiante_activo.nivel_escolaridad %></td>
+        <td><%= estudiante_activo.codigo_estudiante %></td>
+        <td><%= estudiante_activo.fecha_ingreso %></td>
+        <td><%= link_to 'Show', estudiante_activo %></td>
+        <td><%= link_to 'Edit', edit_estudiante_activo_path(estudiante_activo) %></td>
+        <td><%= link_to 'Destroy', estudiante_activo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Estudiante Activo', new_estudiante_activo_path %>

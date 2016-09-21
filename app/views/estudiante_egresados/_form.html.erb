@@ -1,0 +1,72 @@
+<%= form_for(estudiante_egresado) do |f| %>
+  <% if estudiante_egresado.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(estudiante_egresado.errors.count, "error") %> prohibited this estudiante_egresado from being saved:</h2>
+
+      <ul>
+      <% estudiante_egresado.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %>
+    <%= f.text_field :nombre %>
+  </div>
+
+  <div class="field">
+    <%= f.label :apellido %>
+    <%= f.text_field :apellido %>
+  </div>
+
+  <div class="field">
+    <%= f.label :genero %>
+    <%= f.text_field :genero %>
+  </div>
+
+  <div class="field">
+    <%= f.label :edad %>
+    <%= f.number_field :edad %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fecha_nacimiento %>
+    <%= f.date_select :fecha_nacimiento %>
+  </div>
+
+  <div class="field">
+    <%= f.label :numero_identificacion %>
+    <%= f.text_field :numero_identificacion %>
+  </div>
+
+  <div class="field">
+    <%= f.label :grupo_etnico %>
+    <%= f.text_field :grupo_etnico %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nivel_escolaridad %>
+    <%= f.text_field :nivel_escolaridad %>
+  </div>
+
+  <div class="field">
+    <%= f.label :es_empleado %>
+    <%= f.check_box :es_empleado %>
+  </div>
+
+  <div class="field">
+    <%= f.label :caracter_empleo %>
+    <%= f.text_field :caracter_empleo %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fecha_egreso %>
+    <%= f.date_select :fecha_egreso %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :estudiante_egresados
+  resources :estudiante_activos
   resources :activos
   resources :egresados
   resources :estudiantes

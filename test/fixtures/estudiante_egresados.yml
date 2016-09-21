@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  apellido: MyString
+  genero: MyString
+  edad: 1
+  fecha_nacimiento: 2016-09-21
+  numero_identificacion: 
+  grupo_etnico: MyString
+  nivel_escolaridad: MyString
+  es_empleado: false
+  caracter_empleo: MyString
+  fecha_egreso: 2016-09-21
+
+two:
+  nombre: MyString
+  apellido: MyString
+  genero: MyString
+  edad: 1
+  fecha_nacimiento: 2016-09-21
+  numero_identificacion: 
+  grupo_etnico: MyString
+  nivel_escolaridad: MyString
+  es_empleado: false
+  caracter_empleo: MyString
+  fecha_egreso: 2016-09-21

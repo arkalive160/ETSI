@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @estudiante_egresado.nombre %>
+</p>
+
+<p>
+  <strong>Apellido:</strong>
+  <%= @estudiante_egresado.apellido %>
+</p>
+
+<p>
+  <strong>Genero:</strong>
+  <%= @estudiante_egresado.genero %>
+</p>
+
+<p>
+  <strong>Edad:</strong>
+  <%= @estudiante_egresado.edad %>
+</p>
+
+<p>
+  <strong>Fecha nacimiento:</strong>
+  <%= @estudiante_egresado.fecha_nacimiento %>
+</p>
+
+<p>
+  <strong>Numero identificacion:</strong>
+  <%= @estudiante_egresado.numero_identificacion %>
+</p>
+
+<p>
+  <strong>Grupo etnico:</strong>
+  <%= @estudiante_egresado.grupo_etnico %>
+</p>
+
+<p>
+  <strong>Nivel escolaridad:</strong>
+  <%= @estudiante_egresado.nivel_escolaridad %>
+</p>
+
+<p>
+  <strong>Es empleado:</strong>
+  <%= @estudiante_egresado.es_empleado %>
+</p>
+
+<p>
+  <strong>Caracter empleo:</strong>
+  <%= @estudiante_egresado.caracter_empleo %>
+</p>
+
+<p>
+  <strong>Fecha egreso:</strong>
+  <%= @estudiante_egresado.fecha_egreso %>
+</p>
+
+<%= link_to 'Edit', edit_estudiante_egresado_path(@estudiante_egresado) %> |
+<%= link_to 'Back', estudiante_egresados_path %>
