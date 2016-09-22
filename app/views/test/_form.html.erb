@@ -1,0 +1,69 @@
+<%= form_for(setup_programa(programa)) do |f| %>
+  <% if programa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(programa.errors.count, "error") %> prohibited this programa from being saved:</h2>
+
+      <ul>
+      <% programa.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  
+  <div class="field">
+    <%= f.label :nombre_programa %>
+    <%= f.text_field :nombre_programa %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tipo_educacion %>
+    <%= f.check_box :tipo_educacion %>
+  </div>
+
+  <div class="field">
+    <%= f.label :titulo_otorga %>
+    <%= f.text_field :titulo_otorga %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tiempo_formacion %>
+    <%= f.number_field :tiempo_formacion %>
+  </div>
+
+  <div class="field">
+    <%= f.label :familia_profesional %>
+    <%= f.text_field :familia_profesional %>
+  </div>
+  
+  <%= f.fields_for :instalacion do |instalacion_form| %>
+  <p>
+    <div class="field">
+      <%= instalacion_form.label :aulas_fisico_espacial %>
+      <%= instalacion_form.text_field :aulas_fisico_espacial %>
+    </div>
+    
+    <div class="field">
+      <%= instalacion_form.label :talleres_fisico_espacial %>
+      <%= instalacion_form.text_field :talleres_fisico_espacial %>
+    </div>
+    
+    <div class="field">
+      <%= instalacion_form.label :aulas_mobiliario %>
+      <%= instalacion_form.text_field :aulas_mobiliario %>
+    </div>
+    
+    <div class="field">
+      <%= instalacion_form.label :talleres_mobiliario %>
+      <%= instalacion_form.text_field :talleres_mobiliario %>
+    </div>
+  </p>
+  
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  
+<% end %>

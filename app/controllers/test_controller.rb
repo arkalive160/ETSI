@@ -1,4 +1,4 @@
-class ProgramasController < ApplicationController
+class TestController < ApplicationController
   before_action :set_programa, only: [:show, :edit, :update, :destroy]
   skip_before_action :verify_authenticity_token
 
@@ -6,13 +6,11 @@ class ProgramasController < ApplicationController
   # GET /programas.json
   def index
     @programas = Programa.all
-    render json: @programas
   end
 
   # GET /programas/1
   # GET /programas/1.json
   def show
-    
   end
 
   # GET /programas/new
@@ -32,7 +30,6 @@ class ProgramasController < ApplicationController
     @programa.save
     
     render json: params
-    
   end
 
   # PATCH/PUT /programas/1
@@ -69,4 +66,5 @@ class ProgramasController < ApplicationController
     def programa_params
       params.require(:programa).permit(:nombre_programa, :tipo_educacion, :titulo_otorga, :tiempo_formacion, :familia_profesional)
     end
+    
 end

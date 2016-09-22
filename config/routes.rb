@@ -15,5 +15,8 @@ Rails.application.routes.draw do
   resources :componente_practicos
   resources :instalacions
   resources :programas
+  resources :test
+  
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

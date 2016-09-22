@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre programa:</strong>
+  <%= @programa.nombre_programa %>
+</p>
+
+<p>
+  <strong>Tipo educacion:</strong>
+  <%= @programa.tipo_educacion %>
+</p>
+
+<p>
+  <strong>Titulo otorga:</strong>
+  <%= @programa.titulo_otorga %>
+</p>
+
+<p>
+  <strong>Tiempo formacion:</strong>
+  <%= @programa.tiempo_formacion %>
+</p>
+
+<p>
+  <strong>Familia profesional:</strong>
+  <%= @programa.familia_profesional %>
+</p>
+
+
+<%= link_to 'Edit', edit_programa_path(@programa) %> |
+<%= link_to 'Back', programas_path %>
