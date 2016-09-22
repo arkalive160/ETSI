@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160921223445) do
+ActiveRecord::Schema.define(version: 20160922014131) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,13 @@ ActiveRecord::Schema.define(version: 20160921223445) do
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
     t.index ["componente_teorico_id"], name: "index_asignaturas_on_componente_teorico_id", using: :btree
+  end
+
+  create_table "asignaturas_materials", id: false, force: :cascade do |t|
+    t.integer "asignatura_id"
+    t.integer "material_id"
+    t.index ["asignatura_id"], name: "index_asignaturas_materials_on_asignatura_id", using: :btree
+    t.index ["material_id"], name: "index_asignaturas_materials_on_material_id", using: :btree
   end
 
   create_table "componente_practicos", force: :cascade do |t|
@@ -190,6 +197,13 @@ ActiveRecord::Schema.define(version: 20160921223445) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["modulo_id"], name: "index_unidads_on_modulo_id", using: :btree
+  end
+
+  create_table "unidads_materials", id: false, force: :cascade do |t|
+    t.integer "unidad_id"
+    t.integer "material_id"
+    t.index ["material_id"], name: "index_unidads_materials_on_material_id", using: :btree
+    t.index ["unidad_id"], name: "index_unidads_materials_on_unidad_id", using: :btree
   end
 
 end

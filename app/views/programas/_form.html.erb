@@ -1,4 +1,4 @@
-<%= form_for(programa) do |f| %>
+<%= form_for(setup_programa(programa)) do |f| %>
   <% if programa.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(programa.errors.count, "error") %> prohibited this programa from being saved:</h2>
@@ -11,6 +11,7 @@
     </div>
   <% end %>
 
+  
   <div class="field">
     <%= f.label :nombre_programa %>
     <%= f.text_field :nombre_programa %>
@@ -35,8 +36,34 @@
     <%= f.label :familia_profesional %>
     <%= f.text_field :familia_profesional %>
   </div>
+  
+  <%= f.fields_for :instalacion do |instalacion_form| %>
+  <p>
+    <div class="field">
+      <%= instalacion_form.label :aulas_fisico_espacial %>
+      <%= instalacion_form.text_field :aulas_fisico_espacial %>
+    </div>
+    
+    <div class="field">
+      <%= instalacion_form.label :talleres_fisico_espacial %>
+      <%= instalacion_form.text_field :talleres_fisico_espacial %>
+    </div>
+    
+    <div class="field">
+      <%= instalacion_form.label :aulas_mobiliario %>
+      <%= instalacion_form.text_field :aulas_mobiliario %>
+    </div>
+    
+    <div class="field">
+      <%= instalacion_form.label :talleres_mobiliario %>
+      <%= instalacion_form.text_field :talleres_mobiliario %>
+    </div>
+  </p>
+  
+  <% end %>
 
   <div class="actions">
     <%= f.submit %>
   </div>
+  
 <% end %>

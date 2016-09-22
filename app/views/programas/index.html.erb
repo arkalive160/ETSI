@@ -10,6 +10,7 @@
       <th>Titulo otorga</th>
       <th>Tiempo formacion</th>
       <th>Familia profesional</th>
+      <th>Instalacion</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,6 +23,7 @@
         <td><%= programa.titulo_otorga %></td>
         <td><%= programa.tiempo_formacion %></td>
         <td><%= programa.familia_profesional %></td>
+        <td><%= programa.instalacion %></td>
         <td><%= link_to 'Show', programa %></td>
         <td><%= link_to 'Edit', edit_programa_path(programa) %></td>
         <td><%= link_to 'Destroy', programa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
