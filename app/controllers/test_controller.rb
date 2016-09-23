@@ -29,36 +29,36 @@ class TestController < ApplicationController
     #@programa = Programa.new
     #@programa.nombre_programa = params[:nombre_programa]
     #@programa.save
-    programa_hash = { }
+    # programa_hash = { }
     
-    programa_hash[:nombre_programa] = params[:programa][:nombre_programa]
-    programa_hash[:tipo_educacion] = params[:tipo_educacion]
-    programa_hash[:titulo_otorga] = params[:titulo_otorga]
+    # programa_hash[:nombre_programa] = params[:programa][:nombre_programa]
+    # programa_hash[:tipo_educacion] = params[:tipo_educacion]
+    # programa_hash[:titulo_otorga] = params[:titulo_otorga]
     
-    parent_hash = {  }
-    parent_hash[:programa] = params[:programa]
+    # parent_hash = {  }
+    # parent_hash[:programa] = params[:programa]
     
-    instalacion_hash = params.permit( [ {instalacion: :aulas_fisico_espacial} ] )
-    #instalacion_hash = params[:instalacion][:aulas_fisico_espacial]
+    # instalacion_hash = params.permit( [ {instalacion: :aulas_fisico_espacial} ] )
+    # #instalacion_hash = params[:instalacion][:aulas_fisico_espacial]
     
-    mod_hash = params.permit(  modulo: [{ nombre: :nombre, horas_modulo: :horas_modulo, descripcion: :descripcion }])
+    # mod_hash = params.permit(  modulo: [{ nombre: :nombre, horas_modulo: :horas_modulo, descripcion: :descripcion }])
     
-    @componente_teorico = ComponenteTeorico.new(componente_teorico_params)
+    #@componente_teorico = ComponenteTeorico.new(componente_teorico_params)
     @componente_practico = ComponentePractico.new(componente_practico_params)
     
-    @componente_practico.modulos = modulo_params.map  do |m|
+    # @componente_practico.modulos = modulo_params.map  do |m|
       
-      @modulo =  Modulo.new(m.symbolize_keys)
+    #   @modulo =  Modulo.new(m.symbolize_keys)
       
-      #@modulo.unidads = unidad_params.map do |u|
-      #  @unidad = Unidad.new(u.symbolize_keys)
-      #end
+    #   #@modulo.unidads = unidad_params.map do |u|
+    #   #  @unidad = Unidad.new(u.symbolize_keys)
+    #   #end
       
-    end
+    # end
 
     @componente_practico.save
     
-    render json: modulo_params.map
+    render json: componente_practico_params
     
   end
 
@@ -94,7 +94,7 @@ class TestController < ApplicationController
     
     # Never trust parameters from the scary internet, only allow the white list through.
     def programa_params
-      params.require(:programa).permit(:nombre_programa, :tipo_educacion, :titulo_otorga, :tiempo_formacion, :familia_profesional)
+      #params.require(:programa).permit(:nombre_programa, :tipo_educacion, :titulo_otorga, :tiempo_formacion, :familia_profesional)
     end
     
     def componente_teorico_params
@@ -104,16 +104,22 @@ class TestController < ApplicationController
     def modulo_params
       #params.permit( [{ modulo: { nombre: :nombre, horas_modulo: :horas_modulo, descripcion: :descripcion }}])
       #params.permit( [ {instalacion: :aulas_fisico_espacial} ] )
-      params.fetch(:modulo)  
+      #params.fetch(:modulo)  
     end
     
     def componente_practico_params
-      params.require(:componente_practico).permit(:nombre_practico, :total_horas)
+      #params.require(:componente_practico).permit(:nombre_practico, :total_horas)
+      #params.fetch(:componente_practico)
+      params.require(:componente_practico).permit(
+        :nombre_practico, 
+        :total_horas,
+        :modulos_attributes => [ :nombre, :horas_modulo, :descripcion ] )
     end
     
     def unidad_params
       #params.require(:unidad).permit(:nombre_unidad, :competencias, :horas_unidad)
-      params.fetch(:unidad)
+      #params.fetch(:unidad)
+      
     end
     
 end

@@ -6,7 +6,6 @@ class ProgramasController < ApplicationController
   # GET /programas.json
   def index
     @programas = Programa.all
-    render json: @programas
   end
 
   # GET /programas/1
@@ -27,12 +26,20 @@ class ProgramasController < ApplicationController
   # POST /programas
   # POST /programas.json
   def create
-    @programa = Programa.new
-    @programa.nombre_programa = params[:nombre_programa]
-    @programa.save
+    puts programa_params[:instalacion_attributes]
     
-    render json: params
+    @programa = Programa.new(programa_params)
+    Rails.logger.debug params.inspect
     
+    respond_to do |format|
+      if @programa.save
+        format.html { redirect_to @programa, notice: 'Programa was successfully created.' }
+        format.json { render :show, status: :created, location: @programa }
+      else
+        format.html { render :new }
+        format.json { render json: @programa.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # PATCH/PUT /programas/1
