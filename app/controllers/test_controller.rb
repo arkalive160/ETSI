@@ -94,31 +94,31 @@ class TestController < ApplicationController
     
     # Never trust parameters from the scary internet, only allow the white list through.
     def programa_params
-      #params.require(:programa).permit(:nombre_programa, :tipo_educacion, :titulo_otorga, :tiempo_formacion, :familia_profesional)
+     
     end
     
     def componente_teorico_params
-      params.require(:componente_teorico).permit(:nombre_teorico, :total_horas)
+      
     end
     
     def modulo_params
-      #params.permit( [{ modulo: { nombre: :nombre, horas_modulo: :horas_modulo, descripcion: :descripcion }}])
-      #params.permit( [ {instalacion: :aulas_fisico_espacial} ] )
-      #params.fetch(:modulo)  
+     
     end
     
     def componente_practico_params
-      #params.require(:componente_practico).permit(:nombre_practico, :total_horas)
-      #params.fetch(:componente_practico)
       params.require(:componente_practico).permit(
         :nombre_practico, 
         :total_horas,
-        :modulos_attributes => [ :nombre, :horas_modulo, :descripcion ] )
+        :modulos_attributes => [:nombre, 
+                                :horas_modulo, 
+                                :descripcion, 
+                                :unidads_attributes => [:nombre_unidad, 
+                                                        :competencias, 
+                                                        :horas_unidad ]  
+                                ] )
     end
     
     def unidad_params
-      #params.require(:unidad).permit(:nombre_unidad, :competencias, :horas_unidad)
-      #params.fetch(:unidad)
       
     end
     
