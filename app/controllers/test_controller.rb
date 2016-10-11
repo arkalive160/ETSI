@@ -44,7 +44,9 @@ class TestController < ApplicationController
     # mod_hash = params.permit(  modulo: [{ nombre: :nombre, horas_modulo: :horas_modulo, descripcion: :descripcion }])
     
     #@componente_teorico = ComponenteTeorico.new(componente_teorico_params)
-    @componente_practico = ComponentePractico.new(componente_practico_params)
+   # @componente_practico = ComponentePractico.new(componente_practico_params)
+    
+    @programa = Programa.new(programa_params)
     
     # @componente_practico.modulos = modulo_params.map  do |m|
       
@@ -56,9 +58,12 @@ class TestController < ApplicationController
       
     # end
 
-    @componente_practico.save
+    #@componente_practico.save
+     @programa.save
+    # render json: componente_practico_params
     
-    render json: componente_practico_params
+    render json: programa_params
+    
     
   end
 
@@ -94,7 +99,38 @@ class TestController < ApplicationController
     
     # Never trust parameters from the scary internet, only allow the white list through.
     def programa_params
-     
+      
+      params.require(:programa).permit(
+        :nombre_programa, 
+        :tipo_educacion, 
+        :titulo_otorga, 
+        :tiempo_formacion, 
+        :familia_profesional,
+        :competencia_general,
+        :unidades_competencia,
+        :componente_practico_attributes => [ 
+                            :nombre_practico, 
+                            :total_horas,
+                            :modulos_attributes => [:nombre, 
+                                                    :horas_modulo, 
+                                                    :descripcion, 
+                                                    :unidads_attributes => [:nombre_unidad, 
+                                                                            :competencias, 
+                                                                            :horas_unidad ]  
+                                                    ]
+        
+                                            ],
+                                            
+        :componente_teorico_attributes => [
+                          :nombre_teorico, 
+                          :total_horas,
+                          :asignaturas_attributes => [:nombre_asignatura, 
+                                                      :contenido, 
+                                                      :horas_asignatura ]
+
+                                          ]
+                                      )
+
     end
     
     def componente_teorico_params
@@ -106,6 +142,7 @@ class TestController < ApplicationController
     end
     
     def componente_practico_params
+      
       params.require(:componente_practico).permit(
         :nombre_practico, 
         :total_horas,
